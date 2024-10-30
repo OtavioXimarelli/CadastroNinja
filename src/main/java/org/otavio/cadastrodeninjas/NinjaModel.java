@@ -7,6 +7,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
@@ -14,19 +16,21 @@ import lombok.Setter;
 public class NinjaModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
+    @Column(name = "id", nullable = false, updatable = false, unique = true)
     private Long id;
 
     @Column(name = "name", nullable = false)
-    @Getter @Setter
+
     private String name;
 
-    @Column(name = "email", nullable = false)
-    @Getter @Setter
+    @Column(name = "email", nullable = false, unique = true)
+
     private String email;
 
 
     @Column(name = "age", nullable = false )
-    @Getter @Setter
+
     private int idade;
 }
+
+//testando o git amend
