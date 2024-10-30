@@ -7,6 +7,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
@@ -18,15 +20,15 @@ public class NinjaModel {
     private Long id;
 
     @Column(name = "name", nullable = false)
-    @Getter @Setter
+
     private String name;
 
     @Column(name = "email", nullable = false)
-    @Getter @Setter
+    
     private String email;
 
 
     @Column(name = "age", nullable = false )
-    @Getter @Setter
+
     private int idade;
 }
