@@ -1,4 +1,4 @@
-package org.otavio.cadastrodeninjas;
+package org.otavio.cadastrodeninjas.Ninjas;
 
 
 import jakarta.persistence.*;
@@ -6,6 +6,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.otavio.cadastrodeninjas.Missoes.MissionsModel;
+
 
 @Getter
 @Setter
@@ -15,7 +17,7 @@ import lombok.Setter;
 @Table(name = "tb_ninja_register")
 public class NinjaModel {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "id", nullable = false, updatable = false, unique = true)
     private Long id;
 
@@ -28,9 +30,15 @@ public class NinjaModel {
     private String email;
 
 
-    @Column(name = "age", nullable = false )
+    @Column(name = "age", nullable = false)
 
     private int idade;
+
+
+    @ManyToOne
+    @JoinColumn(name = "missions_id")
+    private MissionsModel missions;
+
+
 }
 
-//testando o git amend
