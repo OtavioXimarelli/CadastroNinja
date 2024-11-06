@@ -2,15 +2,11 @@ package org.otavio.cadastrodeninjas.Ninjas;
 
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.otavio.cadastrodeninjas.Missoes.MissionsModel;
 
 
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity

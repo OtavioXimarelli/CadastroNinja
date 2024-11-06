@@ -7,8 +7,7 @@ import org.otavio.cadastrodeninjas.Ninjas.NinjaModel;
 
 import java.util.List;
 
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @RequiredArgsConstructor
