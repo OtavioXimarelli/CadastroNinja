@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.otavio.cadastrodeninjas.Missoes.MissionsModel;
 
+import java.util.UUID;
+
 
 @Data
 @NoArgsConstructor
@@ -15,7 +17,7 @@ public class NinjaModel {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "id", nullable = false, updatable = false, unique = true)
-    private Long id;
+    private UUID id;
 
     @Column(name = "name", nullable = false)
 
