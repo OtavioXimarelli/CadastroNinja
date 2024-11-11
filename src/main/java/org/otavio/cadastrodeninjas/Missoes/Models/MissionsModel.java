@@ -1,25 +1,22 @@
-package org.otavio.cadastrodeninjas.Missoes;
+package org.otavio.cadastrodeninjas.Missoes.Models;
 
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.proxy.HibernateProxy;
-import org.otavio.cadastrodeninjas.Ninjas.NinjaModel;
+import org.otavio.cadastrodeninjas.Ninjas.Models.NinjaModel;
 
 import java.util.List;
-import java.util.Objects;
 
 @Getter
 @Setter
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-@RequiredArgsConstructor
 @Entity
 @Table(name = "tb_missions")
 public class MissionsModel {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false, updatable = false, unique = true)
     private Long id;
     @Column(name = "name")

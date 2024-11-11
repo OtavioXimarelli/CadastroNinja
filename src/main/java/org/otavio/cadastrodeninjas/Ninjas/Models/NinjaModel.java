@@ -1,9 +1,9 @@
-package org.otavio.cadastrodeninjas.Ninjas;
+package org.otavio.cadastrodeninjas.Ninjas.Models;
 
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.otavio.cadastrodeninjas.Missoes.MissionsModel;
+import org.otavio.cadastrodeninjas.Missoes.Models.MissionsModel;
 
 import java.util.UUID;
 
@@ -15,9 +15,9 @@ import java.util.UUID;
 @Table(name = "tb_ninja_register")
 public class NinjaModel {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false, updatable = false, unique = true)
-    private UUID id;
+    private Long id;
 
     @Column(name = "name", nullable = false)
 
