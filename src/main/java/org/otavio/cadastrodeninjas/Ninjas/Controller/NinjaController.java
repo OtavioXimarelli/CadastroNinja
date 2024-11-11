@@ -1,4 +1,4 @@
-package org.otavio.cadastrodeninjas;
+package org.otavio.cadastrodeninjas.Ninjas.Controller;
 
 
 import org.springframework.web.bind.annotation.GetMapping;
