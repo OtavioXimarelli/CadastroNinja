@@ -1,6 +1,7 @@
 package org.otavio.cadastrodeninjas.Missoes.Models;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 import org.otavio.cadastrodeninjas.Ninjas.Models.NinjaModel;
@@ -24,6 +25,7 @@ public class MissionsModel {
     @Column(name = "difficulty")
     private String difficulty;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "missions")
     @ToString.Exclude
     private List<NinjaModel> ninjas;
