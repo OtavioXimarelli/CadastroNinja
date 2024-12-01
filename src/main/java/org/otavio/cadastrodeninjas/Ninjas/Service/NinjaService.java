@@ -28,6 +28,10 @@ public class NinjaService {
         return ninjaById.orElse(null);
     }
 
+    public NinjaModel ciarNinja(NinjaModel ninja) {
+        return ninjaRepository.save(ninja);
+    }
+
 }
 
 

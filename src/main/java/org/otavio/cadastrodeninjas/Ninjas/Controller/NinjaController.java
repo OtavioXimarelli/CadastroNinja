@@ -12,20 +12,15 @@ import java.util.List;
 @RequestMapping("/api/v1/ninjas")
 public class NinjaController {
 
-    private final NinjaService ninjaService;
+    private final NinjaService  ninjaService;
 
     public NinjaController(NinjaService ninjaService) {
         this.ninjaService = ninjaService;
     }
 
-    @GetMapping("/boasvindas")
-    public String boasVindas() {
-        return "Boas Vindas";
-    }
-
     @PostMapping("/create")
-    public String criarNinja() {
-        return "Ninja criado";
+    public NinjaModel criarNinja(@RequestBody NinjaModel ninja) {
+        return ninjaService.ciarNinja(ninja);
     }
 
     @GetMapping("/show")
