@@ -7,8 +7,6 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
-import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
-
 
 @Service
 public class NinjaService {
@@ -24,9 +22,12 @@ public class NinjaService {
         return ninjaRepository.findAll();
     }
 
-    public Optional<NinjaModel> findNinjaByID(Long id) {
-        return ninjaRepository.findById(id);
+
+    public NinjaModel listarNinjaPorId(Long id) {
+        Optional<NinjaModel> ninjaById = ninjaRepository.findById(id);
+        return ninjaById.orElse(null);
     }
+
 }
 
 

@@ -6,13 +6,13 @@ import org.otavio.cadastrodeninjas.Ninjas.Service.NinjaService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
+
 
 @RestController
 @RequestMapping("/api/v1/ninjas")
 public class NinjaController {
 
-    private NinjaService ninjaService;
+    private final NinjaService ninjaService;
 
     public NinjaController(NinjaService ninjaService) {
         this.ninjaService = ninjaService;
@@ -33,9 +33,9 @@ public class NinjaController {
         return ninjaService.listarNinjas();
     }
 
-    @GetMapping("/showByID")
-    public Optional<NinjaModel> findNinjasByID() {
-        return ninjaService.findNinjaByID(Long id);
+    @GetMapping("/show/{id}")
+    public NinjaModel listarNinjasPorId(@PathVariable Long id) {
+        return ninjaService.listarNinjaPorId(id);
     }
 
     @PutMapping("/updateID")
