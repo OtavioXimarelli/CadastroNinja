@@ -4,7 +4,7 @@ package org.otavio.cadastrodeninjas.Ninjas.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/v1")
+@RequestMapping("/api/v1/ninjas")
 public class NinjaController {
 
     @GetMapping("/boasvindas")
