@@ -1,45 +1,46 @@
 package org.otavio.cadastrodeninjas.Missoes.Controller;
 
 
+import org.otavio.cadastrodeninjas.Missoes.Models.MissionsModel;
+import org.otavio.cadastrodeninjas.Missoes.Service.MissionService;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/missions")
 public class MissionsController {
+    private final MissionService missionService;
+
+
+    public MissionsController(MissionService missionService) {
+        this.missionService = missionService;
+    }
 
     @PostMapping("/create")
-    public String criarMissao() {
-        return "missao criada";
+    public MissionsModel criarMissoes(@RequestBody MissionsModel misson) {
+        return missionService.criarMissao(misson);
     }
 
-    @GetMapping("/list")
-    public String listarMissoes() {
-        return "Mostrando as missoes criadas";
+    @GetMapping("/show")
+    public List<MissionsModel> listarTodasMissoes() {
+        return missionService.listarMissoes();
     }
 
-    @PutMapping("/update")
-    public String alterarMissoesID() {
-        return "Altera as missoes por ID" ;
-
+    @GetMapping("/show/{id}")
+    public MissionsModel listarMissoesPorId(@PathVariable Long id) {
+        return missionService.listarMissoesPorID(id);
     }
 
-    @GetMapping("/showByID")
-    public String mostarTodasMissoesPorID() {
-        return "Mostrar Missoes por id";
+    @PutMapping("/alterar/{id}")
+    public MissionsModel alteraMissao(@PathVariable Long id, @RequestBody MissionsModel mission) {
+        return missionService.updateMissions(id, mission);
     }
 
-    @PutMapping("/updateID")
-    public String alterarByID() {
-        return "Alterar missao";
+    @DeleteMapping("/delete/{id}")
+    public void deleteMission (@PathVariable Long id) {
+         missionService.deleteMissionsByID(id);
     }
-
-
-    @DeleteMapping("/deleteID")
-    public String deleteID() {
-        return "Deletar missoes por id";
-    }
-
-
 
 
 }
