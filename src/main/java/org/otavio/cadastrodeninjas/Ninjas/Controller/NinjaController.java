@@ -1,6 +1,7 @@
 package org.otavio.cadastrodeninjas.Ninjas.Controller;
 
 
+import org.otavio.cadastrodeninjas.Ninjas.Dto.NinjaDTO;
 import org.otavio.cadastrodeninjas.Ninjas.Models.NinjaModel;
 import org.otavio.cadastrodeninjas.Ninjas.Service.NinjaService;
 import org.springframework.web.bind.annotation.*;
@@ -19,7 +20,7 @@ public class NinjaController {
     }
 
     @PostMapping("/create")
-    public NinjaModel criarNinja(@RequestBody NinjaModel ninja) {
+    public NinjaDTO criarNinja(@RequestBody NinjaDTO ninja) {
         return ninjaService.ciarNinja(ninja);
     }
 

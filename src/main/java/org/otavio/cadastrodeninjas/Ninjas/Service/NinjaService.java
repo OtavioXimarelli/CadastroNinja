@@ -1,10 +1,11 @@
 package org.otavio.cadastrodeninjas.Ninjas.Service;
 
-import org.hibernate.exception.DataException;
+import org.otavio.cadastrodeninjas.Ninjas.Dto.NinjaDTO;
+import org.otavio.cadastrodeninjas.Ninjas.Mapper.NinjaMapper;
 import org.otavio.cadastrodeninjas.Ninjas.Models.NinjaModel;
 import org.otavio.cadastrodeninjas.Ninjas.Repository.NinjaRepository;
 import org.springframework.stereotype.Service;
-import org.springframework.web.servlet.HandlerExceptionResolver;
+
 
 import java.util.List;
 import java.util.Optional;
@@ -14,12 +15,12 @@ import java.util.Optional;
 public class NinjaService {
 
 
-    private final NinjaRepository ninjaRepository;
-    private final HandlerExceptionResolver handlerExceptionResolver;
+    private final  NinjaRepository ninjaRepository;
+    private final NinjaMapper ninjaMapper;
 
-    public NinjaService(NinjaRepository ninjaRepository, HandlerExceptionResolver handlerExceptionResolver) {
+    public NinjaService(NinjaMapper ninjaMapper, NinjaRepository ninjaRepository) {
+        this.ninjaMapper = ninjaMapper;
         this.ninjaRepository = ninjaRepository;
-        this.handlerExceptionResolver = handlerExceptionResolver;
     }
 
     public List<NinjaModel> listarNinjas() {
@@ -32,9 +33,12 @@ public class NinjaService {
         return ninjaById.orElse(null);
     }
 
-    public NinjaModel ciarNinja(NinjaModel ninja) {
-        return ninjaRepository.save(ninja);
+    public NinjaDTO ciarNinja(NinjaDTO ninjaDTO) {
+        NinjaModel ninja = ninjaMapper.map(ninjaDTO);
+         ninja = ninjaRepository.save(ninja);
+        return ninjaMapper.map(ninja);
     }
+
 
     public void deletarNinja(Long id) {
         ninjaRepository.deleteById(id);
