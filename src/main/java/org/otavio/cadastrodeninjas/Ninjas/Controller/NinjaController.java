@@ -2,7 +2,6 @@ package org.otavio.cadastrodeninjas.Ninjas.Controller;
 
 
 import org.otavio.cadastrodeninjas.Ninjas.Dto.NinjaDTO;
-import org.otavio.cadastrodeninjas.Ninjas.Models.NinjaModel;
 import org.otavio.cadastrodeninjas.Ninjas.Service.NinjaService;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,21 +20,21 @@ public class NinjaController {
 
     @PostMapping("/create")
     public NinjaDTO criarNinja(@RequestBody NinjaDTO ninja) {
-        return ninjaService.ciarNinja(ninja);
+        return ninjaService.criarNinja(ninja);
     }
 
     @GetMapping("/show")
-    public List<NinjaModel> listarNinjas() {
+    public List<NinjaDTO> listarNinjas() {
         return ninjaService.listarNinjas();
     }
 
     @GetMapping("/show/{id}")
-    public NinjaModel listarNinjasPorId(@PathVariable Long id) {
+    public NinjaDTO listarNinjasPorId(@PathVariable Long id) {
         return ninjaService.listarNinjaPorId(id);
     }
 
     @PutMapping("/alterar/{id}")
-    public NinjaModel updateNinjaByID(@PathVariable Long id, @RequestBody NinjaModel ninja) {
+    public NinjaDTO updateNinjaByID(@PathVariable Long id, @RequestBody NinjaDTO ninja) {
         return ninjaService.atualizarNinja(id, ninja);
     }
 
