@@ -26,7 +26,7 @@ public class MissionsModel {
     private String difficulty;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "missions")
+    @OneToMany(mappedBy = "missions", cascade = CascadeType.ALL)
     @ToString.Exclude
     private List<NinjaModel> ninjas;
 
