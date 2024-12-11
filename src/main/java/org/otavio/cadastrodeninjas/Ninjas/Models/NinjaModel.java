@@ -34,7 +34,7 @@ public class NinjaModel {
 
     @ManyToOne
     @JoinColumn(name = "missions_id")
-    private MissionsModel missions;
+    @ToString.Exclude  private MissionsModel missions;
 
 
 }
