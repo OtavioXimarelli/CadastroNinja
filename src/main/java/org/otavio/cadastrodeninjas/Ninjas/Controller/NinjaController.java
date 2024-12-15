@@ -13,6 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/ninjas")
+@CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*")
 public class NinjaController {
 
     private final NinjaService ninjaService;

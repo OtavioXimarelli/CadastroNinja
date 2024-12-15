@@ -1,6 +1,7 @@
 package org.otavio.cadastrodeninjas.Ninjas.Models;
 
 
+import io.swagger.v3.oas.annotations.Hidden;
 import jakarta.persistence.*;
 import lombok.*;
 import org.otavio.cadastrodeninjas.Missoes.Models.MissionsModel;
@@ -12,6 +13,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@Hidden
 @Table(name = "tb_ninja_register")
 public class NinjaModel {
     @Id

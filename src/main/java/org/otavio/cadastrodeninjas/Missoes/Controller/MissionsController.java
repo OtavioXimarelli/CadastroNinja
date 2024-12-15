@@ -14,6 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/missions")
+@CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*")
 public class MissionsController {
     private final MissionService missionService;
 
