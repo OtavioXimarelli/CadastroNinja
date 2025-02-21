@@ -6,8 +6,6 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.otavio.cadastrodeninjas.Missoes.Models.MissionsModel;
 
-import java.util.UUID;
-
 
 @Data
 @NoArgsConstructor

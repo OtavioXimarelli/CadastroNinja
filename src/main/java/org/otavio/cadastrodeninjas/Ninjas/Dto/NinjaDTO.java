@@ -1,12 +1,12 @@
 package org.otavio.cadastrodeninjas.Ninjas.Dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.otavio.cadastrodeninjas.Missoes.Models.MissionsModel;
 
 
 @Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class NinjaDTO {

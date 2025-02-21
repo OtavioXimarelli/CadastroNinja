@@ -1,11 +1,15 @@
 package org.otavio.cadastrodeninjas.Missoes.Mapper;
 
 import io.swagger.v3.oas.annotations.Hidden;
+import lombok.Getter;
+import lombok.Setter;
 import org.otavio.cadastrodeninjas.Missoes.Dto.MissionsDTO;
 import org.otavio.cadastrodeninjas.Missoes.Models.MissionsModel;
 import org.springframework.stereotype.Component;
 
 @Hidden
+@Getter
+@Setter
 @Component
 public class MissionsMapper {
 

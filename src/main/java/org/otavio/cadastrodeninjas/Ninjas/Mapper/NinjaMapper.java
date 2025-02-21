@@ -1,12 +1,17 @@
 package org.otavio.cadastrodeninjas.Ninjas.Mapper;
 
 import io.swagger.v3.oas.annotations.Hidden;
+import lombok.Getter;
+import lombok.Setter;
 import org.otavio.cadastrodeninjas.Ninjas.Dto.NinjaDTO;
 import org.otavio.cadastrodeninjas.Ninjas.Models.NinjaModel;
 import org.springframework.stereotype.Component;
 
 @Hidden
 @Component
+
+@Getter
+@Setter
 public class NinjaMapper {
     public NinjaModel map(NinjaDTO ninjaDTO) {
         NinjaModel ninjaModel = new NinjaModel();
